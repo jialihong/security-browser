@@ -57,8 +57,8 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
     public PersistentTokenRepository persistentTokenRepository(){
         JdbcTokenRepositoryImpl tokenRepository = new JdbcTokenRepositoryImpl();
         tokenRepository.setDataSource(dataSource);
-        //系统启动时自动创建表
-        tokenRepository.setCreateTableOnStartup(true);
+        //系统启动时自动创建表  创建一次即可
+//        tokenRepository.setCreateTableOnStartup(true);
         return tokenRepository;
     }
 
